@@ -15,7 +15,7 @@
 
 // Keyword list
 char const *keywords[] = {
-        "function", "var", "if", "then", "else"
+        "function", "var", "if", "then", "else", "import"
 };
 
 // RelOps
@@ -93,7 +93,7 @@ int isDelim(char c) {
 int isKeyword(char *str) {
     int i;
     int result = 0; // false
-    for (i = 0; i < 5; i++) {
+    for (i = 0; i < 6; i++) {
         if (!strcmp(keywords[i], str))
             result = 1;
     }

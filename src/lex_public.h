@@ -24,7 +24,8 @@ typedef enum {
     DELIM,		// such as . (  ) , { } ; [ ]
     LOGIC,		// such as && || !
     UNDEF,		// undefined
-    EOT 		// end of token
+    START,      // start of file
+    END         // end of file
 } TokenType;
 
 typedef struct {

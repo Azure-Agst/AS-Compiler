@@ -28,21 +28,18 @@ int lex_process_file(char* name){
     char tempstr[101];
     int wordlen = 0;
 
+    Token start {
+            START, name
+    };
+    lexed_file.push_back(start);
+
     while (file.get(curChar)) {
         charNum++;
 
         // ===== { PRELIMINARY ERROR HANDLING } =====
 
         //handle empty
-        if ( curChar == '\000' && lineNum == 0) {
-            sprintf(printData, "File %s is empty! Exiting...", name);
-            print();
-            return -1;
-        } else if ( curChar == '\000' ) {
-            sprintf(printData, "Done parsing %s!", name);
-            print();
-            return 0;
-        }else {
+       if (lineNum == 0) {
             lineNum = 1;
         }
 
@@ -213,6 +210,21 @@ int lex_process_file(char* name){
                 return -1;
             }
         }
+    }
+
+    Token end {
+        END, name
+    };
+    lexed_file.push_back(end);
+
+    if ( curChar == '\000' && lineNum == 0) {
+        sprintf(printData, "File %s is empty! Exiting...", name);
+        print();
+        return -1;
+    } else if ( curChar == '\000' ) {
+        sprintf(printData, "Done parsing %s!", name);
+        print();
+        return 0;
     }
 
     return 0;

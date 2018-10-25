@@ -5,6 +5,7 @@
 
 #include "common.h"
 #include "lex_public.h"
+#include "syn_public.h"
 
 using namespace std;
 
@@ -39,6 +40,12 @@ int main(int argc, char* argv[]) {
     if (lex_main(argv[1]) != 0){
         return -1;
     }
+
+    //Start Syntaxical Analysis
+    if (syn_main() != 0){
+        return -1;
+    }
+
 
     return 0;
 }

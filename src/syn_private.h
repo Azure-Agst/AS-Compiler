@@ -1,0 +1,8 @@
+//
+// Created by Azure on 10/19/2018.
+//
+
+#ifndef AZURESCRIPT_SYN_PRIVATE_H
+#define AZURESCRIPT_SYN_PRIVATE_H
+
+#endif //AZURESCRIPT_SYN_PRIVATE_H
